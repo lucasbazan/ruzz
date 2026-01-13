@@ -1,6 +1,5 @@
 <p align="center">
   <img src="assets/ruzz_logo.png" alt="Ruzz Logo">
-  <p>made with ❤️ by Lucas Bazan</p>
 </p>
 
 A powerful fuzzing tool for web application testing.
@@ -117,3 +116,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Contributing
 
 See the [CONTRIBUTING](CONTRIBUTING.md) guide for details on how to contribute to this project.
+
+<p align="center">made with ❤️ by Lucas Bazan</p>
