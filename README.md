@@ -4,12 +4,48 @@
 
 A powerful fuzzing tool for web application testing.
 
+---
+
+## Summary
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Basic Syntax](#basic-syntax)
+  - [Action Options](#action-options)
+  - [Configuration Options](#configuration-options)
+- [Examples](#examples)
+- [License](#license)
+- [Contributing](#contributing)
+
+---
+
 ## Installation
 
-### By building from source
+### Using Cargo (recommended)
+Make sure you have [Rust and Cargo](https://rust-lang.org/tools/install) installed. Then run:
+
+- Production version:
+```bash
+cargo install ruzz
+```
+
+- Development version:
+```bash
+cargo install --git https://github.com/lucasbazan/ruzz --branch develop
+```
+
+### Using precompiled binaries
+1. Download the latest release from the [Releases](https://github.com/lucasbazan/ruzz/releases/latest) page.
+2. Extract the downloaded archive.
+3. Move the binary to a directory in your PATH for easier access:
+   e.g.,
+   ```bash
+   mv ruzz /usr/local/bin/
+   ```
+
+### By building from source (for developers)
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/ruzz.git
+   git clone https://github.com/lucasbazan/ruzz.git
    cd ruzz
    ```
 2. Build the project:
@@ -22,16 +58,7 @@ A powerful fuzzing tool for web application testing.
    mv target/release/ruzz /usr/local/bin/
    ```
 
-
-### Using precompiled binaries
-1. Download the latest release from the [Releases](https://github.com/lucasbazan/ruzz/releases/latest) page.
-2. Extract the downloaded archive.
-3. Move the binary to a directory in your PATH for easier access:
-   ```bash
-   mv ruzz /usr/local/bin/
-   ```
-
-###
+---
 
 ## Usage
 
@@ -108,6 +135,8 @@ A powerful fuzzing tool for web application testing.
 - **`-d, --delay <seconds>`**  
   Delay between each request
 
+---
+
 ## Examples
 
 ### Using a targets list file
@@ -143,9 +172,13 @@ ruzz -t target.com/:FUZZ1:/:FUZZ2: \
   -ec 404
 ```
 
+---
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
 
 ## Contributing
 
