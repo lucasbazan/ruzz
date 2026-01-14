@@ -2,12 +2,29 @@
   <img src="assets/ruzz_logo.png" alt="Ruzz Logo">
 </p>
 
-A powerful fuzzing tool for web application testing.
+<p align="center">
+  <a href="https://crates.io/crates/ruzz"><img src="https://img.shields.io/crates/v/ruzz.svg" alt="Crates.io"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"></a>
+  <a href="https://github.com/lucasbazan/ruzz/actions/workflows/ci.yml"><img src="https://github.com/lucasbazan/ruzz/actions/workflows/ci.yml/badge.svg" alt="Build Status"></a>
+  <a href="https://codecov.io/gh/lucasbazan/ruzz"><img src="https://codecov.io/gh/lucasbazan/ruzz/branch/main/graph/badge.svg" alt="Coverage Status"></a>
+  <a href="https://sonarcloud.io/summary/new_code?id=lucasbazan_ruzz"><img src="https://sonarcloud.io/api/project_badges/measure?project=lucasbazan_ruzz&metric=alert_status" alt="SonarCloud Quality Gate"></a>
+  <a href="https://sonarcloud.io/summary/new_code?id=lucasbazan_ruzz"><img src="https://sonarcloud.io/api/project_badges/measure?project=lucasbazan_ruzz&metric=coverage" alt="SonarCloud Coverage"></a>
+  <a href="https://snyk.io/test/github/lucasbazan/ruzz"><img src="https://snyk.io/test/github/lucasbazan/ruzz/badge.svg" alt="Snyk Vulnerabilities"></a>
+</p>
+
+
+# Ruzz - The Mad Rust Web Fuzzer
+
+---
+
+"Ruzz: The blazing fast, multi-parameter web fuzzer written in Rust." Designed for complex API discovery with intuitive JSON-based wordlist mapping.
+I can help you discover hidden endpoints, parameters, and vulnerabilities in web applications by fuzzing multiple parameters simultaneously with high efficiency.
 
 ---
 
 ## Summary
 - [Installation](#installation)
+- [Why Ruzz?](#why-ruzz)
 - [Usage](#usage)
   - [Basic Syntax](#basic-syntax)
   - [Action Options](#action-options)
@@ -57,6 +74,13 @@ cargo install --git https://github.com/lucasbazan/ruzz --branch develop
    ```bash
    mv target/release/ruzz /usr/local/bin/
    ```
+
+---
+
+## Why Ruzz?
+- 🚀 Rust-Powered: Low memory footprint and high concurrency.
+- 🧩 Smart Multi-Fuzzing: Handle complex scenarios effortlessly with JSON mapping.
+- 🔀 Flexible Modes: Switch between shuffle (combinations) and mono modes instantly.
 
 ---
 
