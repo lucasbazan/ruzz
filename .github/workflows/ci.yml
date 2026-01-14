@@ -1,0 +1,26 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: rust:1.92-slim-bookworm
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Build
+        run: cargo build --verbose
+
+      - name: Run Tests
+        run: cargo test --verbose

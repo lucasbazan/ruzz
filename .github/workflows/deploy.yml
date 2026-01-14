@@ -1,0 +1,52 @@
+name: Continuous Deployment
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+
+permissions:
+  contents: write
+  packages: write
+  pull-requests: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    container:
+      image: rust:1.92-slim-bookworm
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Install Cargo Utils
+        run: cargo install cargo-get cargo-edit
+
+      - name: Get Old Version
+        id: get_old_version
+        run: echo "::set-output name=version::$(cargo get version)"
+
+      - name: Bump Version - Patch
+        if: startsWith(github.head_ref, 'feature/') || startsWith(github.head_ref, 'fix/') || startsWith(github.head_ref, 'chore/')
+        run: cargo set-version patch
+    
+      - name: Bump Version - Minor
+        if: startsWith(github.head_ref, 'release/')
+        run: cargo set-version minor
+
+      - name: Cargo Test
+        run: cargo test --verbose
+
+      - name: Commit Version Bump
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -am "Bump version from ${{ steps.get_old_version.outputs.version }} to $(cargo get version)"
+          git tag v$(cargo get version)
+          git push origin ${{ github.ref_name }} --tags
+
+      - name: Publish to Crates.io
+        env:
+          CARGO_REGISTRY_TOKEN: ${{ secrets.CRATES_API_KEY }}
+        run: cargo publish --no-verify
