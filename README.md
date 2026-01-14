@@ -15,8 +15,16 @@
 
 # Ruzz - The Mad Rust Web Fuzzer
 
+**Ruzz** isn't just another fuzzer. It's built to handle complex, multi-variable fuzzing scenarios that other tools struggle with. Leveraging the power of Rust, it offers high concurrency with a minimal memory footprint.
 "Ruzz: The blazing fast, multi-parameter web fuzzer written in Rust." Designed for complex API discovery with intuitive JSON-based wordlist mapping.
 I can help you discover hidden endpoints, parameters, and vulnerabilities in web applications by fuzzing multiple parameters simultaneously with high efficiency.
+
+### 🔥 Key Features
+- **Complex Mapping:** Define multiple injection points (`:FUZZ1:`, `:FUZZ2:`) easily via JSON.
+- **Smart Filtering:** Include or exclude results by status codes instantly.
+- **Developer Friendly:** Simple CLI syntax inspired by modern standards.
+
+[TO DO GIF showing Ruzz in action]
 
 ---
 
