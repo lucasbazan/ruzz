@@ -6,16 +6,45 @@ A powerful fuzzing tool for web application testing.
 
 ## Installation
 
-```bash
-# TODO - Add installation instructions here
-```
+### By building from source
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/ruzz.git
+   cd ruzz
+   ```
+2. Build the project:
+   ```bash
+   cargo build --release
+   ```
+3. The compiled binary will be located in the `target/release` directory.
+4. (Optional) Move the binary to a directory in your PATH for easier access:
+   ```bash
+   mv target/release/ruzz /usr/local/bin/
+   ```
+
+
+### Using precompiled binaries
+1. Download the latest release from the [Releases](https://github.com/lucasbazan/ruzz/releases/latest) page.
+2. Extract the downloaded archive.
+3. Move the binary to a directory in your PATH for easier access:
+   ```bash
+   mv ruzz /usr/local/bin/
+   ```
+
+###
 
 ## Usage
 
 ### Basic Syntax
 
+#### Linux
 ```bash
-ruzz [action options] [configuration options]
+./ruzz [action options] [configuration options]
+```
+
+#### Windows
+```bash
+.\ruzz.exe [action options] [configuration options]
 ```
 
 ## Action Options
@@ -32,9 +61,14 @@ ruzz [action options] [configuration options]
 ### Wordlist Mapping
 
 - **`-wm, --wordlists-mapping <mapping>`**  
-  Define wordlists for fuzzing using JSON format:
+  Define wordlists for fuzzing in JSON format (used in SHUFFLE mode).:
   ```bash
   -wm "{'fuzz1':'path/to/wordlists/fuzz1.txt', 'fuzz2':'path/to/wordlists/fuzz2.txt'}"
+  ```
+- **`-w, --wordlist <file>`**  
+  Path to a single wordlist file (used in MONO mode).
+  ```bash
+  -w "/path/to/wordlist.txt"
   ```
 
 ### Fuzzing Mode
@@ -42,7 +76,7 @@ ruzz [action options] [configuration options]
 - **`-m, --mode <mode>`**  
   Fuzzing mode (default: `shuffle`):
   - **`shuffle`**: Tests all possible combinations between wordlists
-  - **`row`**: Tests line-by-line (first line of fuzz1 with first line of fuzz2, and so on)
+  - **`mono`**: Tests all the fuzz placeholders with the same wordlist simultaneously
 
 ### Response Filtering
 
@@ -68,7 +102,7 @@ ruzz [action options] [configuration options]
 - **`-x, --threads <number>`**  
   Number of concurrent threads
 
-- **`-r, --rate-limit <rate>`**  
+- **`-rl, --rate-limit <rate>`**  
   Rate limit in requests per second
 
 - **`-d, --delay <seconds>`**  
@@ -95,17 +129,17 @@ ruzz -t example.com/api/:FUZZ1: \
   -wm "{'FUZZ1':'endpoints.txt'}" \
   -ic 200,201,301 \
   -x 10 \
-  -r 50 \
+  -rl 50 \
   -H "Authorization: Bearer token" \
   -v debug
 ```
 
-### Row mode fuzzing
+### Mono mode fuzzing
 
 ```bash
 ruzz -t target.com/:FUZZ1:/:FUZZ2: \
-  -wm "{'FUZZ1':'users.txt', 'FUZZ2':'passwords.txt'}" \
-  -m row \
+  -w "/path/to/wordlist.txt" \
+  -m mono \
   -ec 404
 ```
 
