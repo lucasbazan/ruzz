@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - develop
 
 permissions:
   contents: write
@@ -25,14 +24,10 @@ jobs:
 
       - name: Get Old Version
         id: get_old_version
-        run: echo "::set-output name=version::$(cargo get version)"
-
-      - name: Bump Version - Patch
-        if: startsWith(github.head_ref, 'feature/') || startsWith(github.head_ref, 'fix/') || startsWith(github.head_ref, 'chore/')
-        run: cargo set-version patch
+        run: echo "::set-output name=version::$(cargo get version)
     
       - name: Bump Version - Minor
-        if: startsWith(github.head_ref, 'release/')
+        if: startsWith(github.head_ref, 'develop')
         run: cargo set-version minor
 
       - name: Cargo Test
