@@ -5,6 +5,8 @@
 A powerful fuzzing tool for web application testing.
 
 ## Installation
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Flucasbazan%2Fruzz.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Flucasbazan%2Fruzz?ref=badge_shield)
+
 
 ```bash
 # TODO - Add installation instructions here
@@ -112,6 +114,9 @@ ruzz -t target.com/:FUZZ1:/:FUZZ2: \
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Flucasbazan%2Fruzz.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Flucasbazan%2Fruzz?ref=badge_large)
 
 ## Contributing
 
