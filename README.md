@@ -9,9 +9,8 @@
   <a href="https://codecov.io/gh/lucasbazan/ruzz"><img src="https://codecov.io/gh/lucasbazan/ruzz/branch/main/graph/badge.svg" alt="Coverage Status"></a>
   <a href="https://sonarcloud.io/summary/new_code?id=lucasbazan_ruzz"><img src="https://sonarcloud.io/api/project_badges/measure?project=lucasbazan_ruzz&metric=alert_status" alt="SonarCloud Quality Gate"></a>
   <a href="https://sonarcloud.io/summary/new_code?id=lucasbazan_ruzz"><img src="https://sonarcloud.io/api/project_badges/measure?project=lucasbazan_ruzz&metric=coverage" alt="SonarCloud Coverage"></a>
-  <a href="https://snyk.io/test/github/lucasbazan/ruzz"><img src="https://snyk.io/test/github/lucasbazan/ruzz/badge.svg" alt="Snyk Vulnerabilities"></a>
+  <a href="https://snyk.io/test/github/lucasbazan/ruzz"><img src="https://snyk.io/test/github/lucasbazan/ruzz/badge.svg" alt="Snyk Vulnerabilities"></a> <a href="https://app.fossa.com/projects/git%2Bgithub.com%2Flucasbazan%2Fruzz?ref=badge_shield&issueType=license"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Flucasbazan%2Fruzz.svg?type=shield&issueType=license" alt="Crates.io"></a>
 </p>
-
 
 # Ruzz - The Mad Rust Web Fuzzer
 
